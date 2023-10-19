@@ -1,0 +1,47 @@
+#root {
+  max-width: 1280px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+ul {
+  padding: 0;
+}
+/* todo入力 */
+.todo-input-wrapper {
+  background: #ffadad;
+  padding: 5%;
+}
+.todo-title {
+  font-size: 2rem;
+}
+.todo-title-form,
+.todo-content-form {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 2% auto;
+}
+
+/* todo出力 */
+.todo-task-wrapper {
+  background: #adf3ff;
+  padding: 5%;
+}
+.delete-button {
+  width: 30%;
+  margin: 0 auto;
+}
+.todolist-label {
+  font-size: 1rem;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #333;
+}
+.task-list p {
+  margin: 2% 0;
+}

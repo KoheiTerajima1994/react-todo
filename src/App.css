@@ -4,14 +4,16 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  overflow: scroll;
 }
 ul {
   padding: 0;
+  list-style: none;
 }
 /* todo入力 */
 .todo-input-wrapper {
   background: #ffadad;
-  padding: 5%;
+  padding: 2% 5%;
 }
 .todo-title {
   font-size: 2rem;
@@ -27,11 +29,14 @@ ul {
 /* todo出力 */
 .todo-task-wrapper {
   background: #adf3ff;
-  padding: 5%;
+  padding: 2% 5%;
 }
-.delete-button {
-  width: 30%;
-  margin: 0 auto;
+.button-flex {
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
+  width: 40%;
+  gap: 5%;
 }
 .todolist-label {
   font-size: 1rem;
@@ -40,8 +45,42 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #333;
+  border: 4px solid red;
+  margin-bottom: 5%;
 }
 .task-list p {
   margin: 2% 0;
+}
+.todo-state {
+  width: 40%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+/* todo完了リスト */
+.todo-finish-wrapper {
+  background: #c0ffad;
+  padding: 2% 5%;
+}
+.todofinishlist-label {
+  font-size: 1rem;
+}
+.finish-task-list {
+  border: 1px solid #333;
+}
+.button-flex02 {
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
+  width: 70%;
+  gap: 5%;
+}
+
+/* ログイン */
+.login-wrapper {
+  background: rgb(83, 99, 142);
+}
+/* サインアップ */
+.signup-wrapper {
+  background: rgb(145, 192, 149);
 }

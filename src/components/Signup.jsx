@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState, useEffect } from 'react';
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from '../Firebase';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -16,11 +17,30 @@ const Signup = () => {
             console.log('ユーザー情報が適切に作成されました。');
         }
         catch(error) {
-            console.error('ユーザー情報が作成されませんでした', error);
+            alert('ユーザー情報が作成されませんでした');
         }  
     }
 
+    const [user, setUser] = useState("");
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    }, []);
+
+    // すでに登録済みの場合には、loginページに飛ばすボタン
+    const navigate = useNavigate();
+    const handleLoginClick = () => {
+        navigate('/login');
+    }
+
     return (
+        <>
+        {/* ログインしていれば、マイページを表示 */}
+        {user ? (
+            <Navigate to={`/`} />
+        ) : (
         <div className="signup-wrapper">
             <h1>ユーザー登録</h1>
             <form onSubmit={handleSubmit}>
@@ -46,7 +66,11 @@ const Signup = () => {
                 </div>
                 <button>ユーザー登録</button>
             </form>
+
+            <button onClick={handleLoginClick}>既に登録済みの方はログインページへ</button>
         </div>
+        )}
+        </>
     )
 };
 

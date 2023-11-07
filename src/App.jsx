@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import '../App.css';
+import './App.css';
 
 const App = () => {
 
@@ -131,7 +131,7 @@ const App = () => {
 
       <div className="todo-task-wrapper">
         <p className="todolist-label">Todoリスト</p>
-        <p><span style={{color: 'red'}}>赤枠：未着手</span>　<span style={{color: 'yellow'}}>黄枠：進行中</span></p>
+        <p><span style={{color: 'red'}}>赤枠：未着手</span> <span style={{color: 'yellow'}}>黄枠：進行中</span></p>
         <ul>
           {todoList.map((todo, index) => {
             const uniqueTaskClass = `todo-state-${index}`;

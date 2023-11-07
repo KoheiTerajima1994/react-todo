@@ -20,7 +20,7 @@ const Mypage = () => {
             setUser(currentUser);
         });
         setLoading(false);
-    }, []);
+    });
 
     // ログアウト処理
     const navigate = useNavigate();

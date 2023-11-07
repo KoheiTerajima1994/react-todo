@@ -54,7 +54,7 @@ const Signup = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div class="password-input">
+                <div className="password-input">
                     <label htmlFor="password">パスワード</label>
                     <input
                     type="text"

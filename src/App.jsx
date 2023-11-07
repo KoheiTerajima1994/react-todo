@@ -4,7 +4,6 @@ import SignUp from './components/Signup';
 import Login from './components/Login';
 import Mypage from './components/Mypage';
 
-
 function App() {
   return (
     <>

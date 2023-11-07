@@ -19,12 +19,14 @@ const Login = () => {
         }
     }
 
+    // ログインしているかどうかの判定
     const [user, setUser] = useState("");
+
     useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
         });
-    });
+    }, []);
 
     // 登録がまだの場合、signupページへ飛ばすボタン
     const navigate = useNavigate();

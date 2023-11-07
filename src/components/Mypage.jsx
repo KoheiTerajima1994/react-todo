@@ -18,16 +18,15 @@ const Mypage = () => {
     useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false);
         });
-        setLoading(false);
-    });
+    }, []);
 
     // ログアウト処理
     const navigate = useNavigate();
     const logout = async () => {
       await signOut(auth);
-      alert('aaa');
-      navigate('/login');
+      navigate("/login");
     }
 
     {/* Todo状態保持、更新関連 */}
@@ -136,9 +135,7 @@ const Mypage = () => {
         {!loading && (
           <>
             {!user ? (
-          <>
             <Navigate to={`/login`} />
-          </>
         ) : (
           <>
             <p>{user && user.email}さん、こんにちは！</p>
@@ -166,7 +163,7 @@ const Mypage = () => {
       
             <div className="todo-task-wrapper">
               <p className="todolist-label">Todoリスト</p>
-              <p><span style={{color: 'red'}}>赤枠：未着手</span>　<span style={{color: 'yellow'}}>黄枠：進行中</span></p>
+              <p><span style={{color: 'red'}}>赤枠：未着手</span><span style={{color: 'yellow'}}>黄枠：進行中</span></p>
               <ul>
                 {todoList.map((todo, index) => {
                   const uniqueTaskClass = `todo-state-${index}`;

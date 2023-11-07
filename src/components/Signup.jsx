@@ -18,9 +18,10 @@ const Signup = () => {
         }
         catch(error) {
             alert('ユーザー情報が作成されませんでした');
-        }  
+        }
     }
 
+    // ログインしているかどうかの判定
     const [user, setUser] = useState("");
 
     useEffect(() => {
